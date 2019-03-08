@@ -4,7 +4,9 @@
   "description": "A react project template containing the common configures",
   "main": "index.js",
   "scripts": {
-    "start": "webpack & nodemon app.js",
+    "start": "nodemon app.js",
+    "dev": "webpack-dev-server",
+    "webpack":"webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -16,7 +18,8 @@
     "@babel/runtime": "^7.3.4",
     "express": "^4.16.4",
     "react": "^16.8.3",
-    "react-dom": "^16.8.3"
+    "react-dom": "^16.8.3",
+    "react-router-dom": "^4.3.1"
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",
@@ -30,6 +33,9 @@
     "nodemon": "^1.18.10",
     "style-loader": "^0.23.1",
     "webpack": "^4.29.5",
-    "webpack-cli": "^3.2.3"
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-middleware": "^3.6.0",
+    "webpack-dev-server": "^3.2.1",
+    "webpack-hot-middleware": "^2.24.3"
   }
 }

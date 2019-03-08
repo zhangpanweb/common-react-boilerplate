@@ -7,7 +7,7 @@ const PORT = process.env.PORT || '3100';
 
 app.use(express.static('dist'));
 
-app.get('/', async (req, res) => {
+app.get('/*', async (req, res) => {
   const page = fs.readFileSync('./views/index.html');
   res.end(page);
 })

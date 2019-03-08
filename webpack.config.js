@@ -7,7 +7,8 @@ module.exports = () => ({
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    publicPath: '/'
   },
   resolve: {
     extensions: ['.jsx', '.js']
@@ -33,5 +34,11 @@ module.exports = () => ({
     ]
   },
   watch: true,
-  devtool: 'source-map'
+  devServer: {
+    historyApiFallback: true,
+    contentBase: './views',
+    publicPath: '/',
+    open: true
+  },
+  devtool: 'eval-source-map'
 })
