@@ -8,4 +8,4 @@ module.exports = (env) => {
     return merge.smart(commonConfig, prodConfig);
   }
   return merge.smart(commonConfig, devConfig);
-}
+};

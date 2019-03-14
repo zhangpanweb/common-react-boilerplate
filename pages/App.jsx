@@ -1,30 +1,30 @@
 import React from 'react';
 import { Route, Switch, Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import './app.less';
 
 const Home = () => (
   <div>Home</div>
-)
+);
 
 const About = () => (
   <div>About</div>
-)
+);
 
-const ContactA = ()=>(
+const ContactA = () => (
   <div>ContactA</div>
-)
+);
 
-const ContactBA = ()=>(
+const ContactBA = () => (
   <div>ContactBA</div>
-)
+);
 
-
-const ContactBB = ()=>(
+const ContactBB = () => (
   <div>ContactBB</div>
-)
+);
 
-const ContactB = ({match})=>(
+const ContactB = ({ match }) => (
   <>
     <div>
       <Link to={`${match.url}/b-1`}>contact BA</Link>
@@ -35,9 +35,12 @@ const ContactB = ({match})=>(
       <Route path={`${match.url}/b-2`} component={ContactBB}/>
     </Switch>
   </>
-)
+);
+ContactB.propTypes = {
+  match: PropTypes.object.isRequired()
+};
 
-const Contact = ({match}) => (
+const Contact = ({ match }) => (
   <>
     <p>contact</p>
     <div>
@@ -49,7 +52,10 @@ const Contact = ({match}) => (
       <Route path={`${match.url}/b`} component={ContactB}/>
     </Switch>
   </>
-)
+);
+Contact.propTypes = {
+  match: PropTypes.object.isRequired()
+};
 
 const App = () => (
   <>
@@ -64,6 +70,6 @@ const App = () => (
       <Route path="/contact" component={Contact} />
     </Switch>
   </>
-)
+);
 
 export default App;

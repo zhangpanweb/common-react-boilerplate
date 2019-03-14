@@ -1,5 +1,5 @@
 module.exports = () => ({
-  mode:'development',
+  mode: 'development',
   watch: true,
   devServer: {
     historyApiFallback: true,
@@ -8,4 +8,4 @@ module.exports = () => ({
     open: true
   },
   devtool: 'eval-source-map'
-})
+});
