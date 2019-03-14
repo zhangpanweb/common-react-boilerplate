@@ -4,14 +4,14 @@ module.exports = {
     'es6': true,
     'node': true
   },
-  'extends': ['standard','plugin:react/recommended'],
+  'extends': ['standard', 'plugin:react/recommended'],
   'globals': {
     'Atomics': 'readonly',
     'SharedArrayBuffer': 'readonly'
   },
   'parserOptions': {
     'ecmaFeatures': {
-        'jsx': true
+      'jsx': true
     },
     'ecmaVersion': 2018,
     'sourceType': 'module'
@@ -24,5 +24,9 @@ module.exports = {
       'error',
       'always'
     ],
+    'semi-style': [
+      'error', 
+      'last'
+    ]
   }
 };
