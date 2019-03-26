@@ -1,6 +1,7 @@
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-module.exports = () => ({
+module.exports = (env) => ({
   entry: {
     app: path.resolve(__dirname, '../entry/index.jsx')
   },
@@ -23,7 +24,7 @@ module.exports = () => ({
       }, {
         test: /\.less$/,
         use: [{
-          loader: 'style-loader'
+          loader: (env.ENV === 'development') ? 'style-loader' : MiniCssExtractPlugin.loader
         }, {
           loader: 'css-loader'
         }, {
@@ -31,5 +32,11 @@ module.exports = () => ({
         }]
       }
     ]
-  }
+  },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[id].css'
+    })
+  ]
 });
