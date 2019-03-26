@@ -16,8 +16,15 @@ With my personal study, this project will be completed gradually.
   - live reload when change files
   - using webpack watch to support auto bundle when file changed
   - souce map
+- eslint
+- dynamically import components using webpack dynamically import or using react native lazy-suspense
+- production
+  - clean /dist dictionary before bundling
 
 #### todo
 
-- set eslint
-- ...
+- extract css file into another bundle
+- production config
+- webpack bundler analyzer
+- add Hashes to filenames
+- use babel-eslint to parser experimental features
