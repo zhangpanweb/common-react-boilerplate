@@ -6,14 +6,11 @@ module.exports = (env) => ({
   entry: {
     app: path.resolve(__dirname, '../entry/index.jsx')
   },
-  output: {
-    path: path.resolve(__dirname, '../dist'),
-    filename: '[name].bundle.js',
-    publicPath: '/'
-  },
+
   resolve: {
     extensions: ['.jsx', '.js']
   },
+
   module: {
     rules: [
       {
@@ -34,11 +31,8 @@ module.exports = (env) => ({
       }
     ]
   },
+
   plugins: [
-    new MiniCssExtractPlugin({
-      filename: '[name].css',
-      chunkFilename: '[id].css'
-    }),
     new HtmlWebpackPlugin({
       template: './views/index.html'
     })
