@@ -11,6 +11,14 @@ module.exports = () => ({
     minimizer: [
       new TerserJSPlugin({}),
       new OptimizeCSSAssetsPlugin({})
-    ]
+    ],
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          chunks: 'all'
+        }
+      }
+    }
   }
 });

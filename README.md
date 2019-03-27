@@ -20,11 +20,12 @@ With my personal study, this project will be completed gradually.
 - dynamically import components using webpack dynamically import or using react native lazy-suspense
 - production
   - clean /dist dictionary before bundling
+  - extract css file into another bundle
 
 #### todo
 
-- extract css file into another bundle
 - production config
 - webpack bundler analyzer
 - add Hashes to filenames
 - use babel-eslint to parser experimental features
+- optimize generated html file
