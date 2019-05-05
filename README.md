@@ -29,3 +29,5 @@ With my personal study, this project will be completed gradually.
 - add Hashes to filenames
 - use babel-eslint to parser experimental features
 - optimize generated html file
+- add @babel/plugin-proposal-class-properties to use experimental function binding
+- add support for plain css file
