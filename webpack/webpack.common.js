@@ -35,6 +35,14 @@ module.exports = (env) => ({
         }, {
           loader: 'css-loader'
         }]
+      }, {
+        test: /\.(png|jpg|gif)$/i,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[path][name].[ext]?[hash]'
+          }
+        }]
       }
     ]
   },

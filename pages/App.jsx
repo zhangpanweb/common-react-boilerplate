@@ -20,6 +20,9 @@ class App extends React.Component {
     return (
       <div onClick={this.handleClick}>
         {this.state.count}
+        <p>
+          <img src={require('../asset/images/calendar-check.png')}/>
+        </p>
       </div>
     );
   }
