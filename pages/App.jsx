@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './app.less';
+import './app.css';
 
 class App extends React.Component {
   constructor (props) {

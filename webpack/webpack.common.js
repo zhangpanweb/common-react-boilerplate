@@ -28,6 +28,13 @@ module.exports = (env) => ({
         }, {
           loader: 'less-loader'
         }]
+      }, {
+        test: /\.css$/,
+        use: [{
+          loader: (env.ENV === 'development') ? 'style-loader' : MiniCssExtractPlugin.loader
+        }, {
+          loader: 'css-loader'
+        }]
       }
     ]
   },
