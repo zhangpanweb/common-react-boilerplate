@@ -3,25 +3,30 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
-module.exports = () => ({
-  mode: 'production',
+module.exports = (env) => {
+  const mode = 'production';
 
-  output: {
+  const output = {
     path: path.resolve(__dirname, '../dist'),
     filename: '[name].[contentHash].js',
     publicPath: '/'
-  },
+  };
 
-  plugins: [
+  const plugins = [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: '[name].[contentHash].css',
       chunkFilename: '[name].css'
     })
-  ],
+  ];
 
-  optimization: {
+  if (env.analyze) {
+    plugins.push(new BundleAnalyzerPlugin());
+  };
+
+  const optimization = {
     minimizer: [
       new TerserJSPlugin({}),
       new OptimizeCSSAssetsPlugin({})
@@ -42,5 +47,12 @@ module.exports = () => ({
         }
       }
     }
-  }
-});
+  };
+
+  return {
+    mode,
+    output,
+    plugins,
+    optimization
+  };
+};
