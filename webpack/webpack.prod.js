@@ -31,6 +31,14 @@ module.exports = () => ({
         vendor: {
           test: /[\\/]node_modules[\\/]/,
           chunks: 'all'
+        },
+        common: {
+          name: 'common',
+          minChunks: 2,
+          chunks: 'all',
+          priority: 10,
+          reuseExistingChunk: true,
+          enforce: true
         }
       }
     }
