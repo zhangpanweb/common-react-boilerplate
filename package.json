@@ -4,8 +4,9 @@
   "description": "A react project template containing the common configures",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app.js",
+    "start": "npm run dev",
     "dev": "webpack-dev-server --env.ENV=development",
+    "test-build":"npm run build && nodemon app.js",
     "build": "webpack --env.ENV=production",
     "lint": "eslint --ext .js,.jsx ./",
     "build-analyze": "webpack --env.ENV=production --env.analyze=true"

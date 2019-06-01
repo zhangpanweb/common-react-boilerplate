@@ -1,33 +1,32 @@
-## common-react-boilerplate
+## Common-react-boilerplate
 
-A react project template containing the common configures.
+A configed react boilerplate. You can use it with or without change.
 
-With my personal study, this project will be completed gradually.
 
-#### supported
 
-- JavaScript and React 
-  - jsx syntax
-  - use babel to convert es6 to es5
-- css
-  - support less
-- dev functionality
-  - serve by webpack-dev-server
-  - live reload when change files
-  - using webpack watch to support auto bundle when file changed
-  - souce map
-- eslint
-- dynamically import components using webpack dynamically import or using react native lazy-suspense
-- production
-  - clean /dist dictionary before bundling
-  - extract css file into another bundle
+#### Install
 
-#### todo
+```javascript
+git clone 
+rm -rf ./git
+npm install
+```
 
-- production config
-- webpack bundler analyzer
-- add Hashes to filenames
-- use babel-eslint to parser experimental features
-- optimize generated html file
-- add @babel/plugin-proposal-class-properties to use experimental function binding
-- add support for plain css file
+
+
+#### Script
+
+```javascript
+npm start  
+// start a dev server by webpack-dev-server
+
+npm run build 
+// make production build
+
+npm run test-build 
+// make production build and start a file use a express server
+
+npm run build-analyze 
+// make production build and analyze the output using webpack-bundle-analyzer
+```
+
